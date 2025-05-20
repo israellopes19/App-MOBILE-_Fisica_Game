@@ -1,51 +1,76 @@
-
-
-h1{
+h1 {
     font-family: 'MedievalSharp', cursive;
-    font-size: 3em;
+    font-size: 2.5rem;
     color: #D4AF37; /* dourado */
     text-shadow: 2px 2px 4px #000000;
-    position: absolute;
-    justify-content: space-around;
-  
+    text-align: center;
+    margin-top: 1rem;
 }
 
-body{
+/* Layout principal */
+body {
     background-color: darkcyan;
     display: grid;
-    grid-template-columns: 150px 150px 150px 150px;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
     place-content: center;
-    height: 100vh;
+    padding: 1rem;
+    min-height: 100vh;
+    margin: 0;
 }
 
-
-
-
+/* Cartões */
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 180px;
+    width: 100%;
+    max-width: 180px;
     height: 160px;
-    border: 0px solid white;
     border-radius: 25%;
     color: black;
     font-weight: bold;
     background-color: white;
     text-decoration: none;
-   
-  }
+    margin: auto;
+    transition: 0.3s;
+}
 
-
-
-.container:hover{
-    background-color:gold;
+.container:hover {
+    background-color: gold;
     color: white;
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(3, 18, 236);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        height: 140px;
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    body {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 16px;
+    }
+
+    .container {
+        height: 120px;
+        max-width: 120px;
+    }
 }
